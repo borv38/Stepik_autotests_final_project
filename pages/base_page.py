@@ -18,6 +18,3 @@ class BasePage():
             return False
         return True
 
-    def should_be_login_link(self):
-        assert self.is_element_present(By.CSS_SELECTOR, "#login_link_invalid"), "Login link is not presented"
-
