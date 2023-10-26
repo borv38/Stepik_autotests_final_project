@@ -6,4 +6,6 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    LOGIN_URL = "pythonanywhere"
+    LOGIN_URL = "login"
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    LOGIN_REGISTER = (By.CSS_SELECTOR, "#register_form")
