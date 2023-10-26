@@ -9,7 +9,7 @@ class LoginPage(BasePage):
        # self.should_be_register_form()
 
     def should_be_login_url(self):
-        login_url = self.browser.driver.current_url
+        login_url = self.browser.current_url
         assert login_url.Contains(*LoginPageLocators.LOGIN_URL), "Login is not presented in the current URL"
 #
 #   # def should_be_login_form(self):
