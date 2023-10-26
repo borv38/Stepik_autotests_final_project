@@ -6,4 +6,4 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    LOGIN_URL = "login"
+    LOGIN_URL = "pythonanywhere"
