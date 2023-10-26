@@ -11,7 +11,7 @@ class LoginPage(BasePage):
     def should_be_login_url(self):
         login_url = self.browser.driver.current_url
         assert login_url.Contains(*LoginPageLocators.LOGIN_URL), "Login is not presented in the current URL"
-
+#
 #    def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
  #       assert True
