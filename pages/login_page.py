@@ -9,8 +9,8 @@ class LoginPage(BasePage):
        # self.should_be_register_form()
 
     def should_be_login_url(self):
-        login_url = self.browser.current_url
-        assert login_url.getText().contains(*LoginPageLocators.LOGIN_URL), "Login is not presented in the current URL"
+        login_u = self.browser.current_url
+        assert LoginPageLocators.LOGIN_URL in login_u, "Login is not presented in the current URL"
 #
 #   # def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
