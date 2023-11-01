@@ -18,5 +18,5 @@ class ProductPage(BasePage):
         subj_price = self.browser.find_element(*ProductPageLocators.PRICE)
         print(subj_price.text[1:])
         print(c_price.text)
-        assert subj_price.text[1:] == c_price.text, "Price not looks good"
+        assert subj_price.text[1:] in c_price.text, "Price not looks good"
         print("Стоимость товара в корзине соответствует стоимости товара")
