@@ -5,6 +5,6 @@ class ProductPageLocators():
     CURRENT_PRICE = "9,99"
     CART_PRICE = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs")
     MESSAGE = " был добавлен в вашу корзину."
-    ADD_MESSAGE = (By.XPATH, '//*[@id="messages"]/div[1]/div')
+    ADD_MESSAGE = (By.XPATH, '//*[@id="messages"]/div[1]/div/text()')
 
 
