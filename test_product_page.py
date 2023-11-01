@@ -1,6 +1,6 @@
 import time
 
-from pages.locators_product import ProductPageLocators
+from .pages.locators_product import ProductPageLocators
 from .pages.product_page import ProductPage
 
 def test_go_to_product_page(browser):
