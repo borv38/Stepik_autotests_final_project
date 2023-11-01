@@ -1,11 +1,8 @@
-from .locators_product import ProductPageLocators
-from .base_page import BasePage
+from pages.base_page import BasePage
+from pages.locators_product import ProductPageLocators
 
-class ProductPage(BasePage):
-    def add_to_cart(self):
-        link = self.browser.find_element(*ProductPageLocators.ADD_TO_CART)
-        link.click()
 
+class add_prod_to_basket(BasePage):
     def compare_message(self):
         self.price_is_ok()
         self.product_added()
