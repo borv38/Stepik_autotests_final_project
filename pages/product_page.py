@@ -9,8 +9,9 @@ class ProductPage(BasePage):
     def product_added(self):
         a_message = self.browser.find_element(*ProductPageLocators.ADD_MESSAGE)
         print(a_message.text)
-       # full_book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME)
-       # row_to_compare = full_book_name.text +
+        full_book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME)
+        print("Название книги: " + full_book_name.text)
+        #row_to_compare = full_book_name.text + " был добавлен в вашу корзину."
         assert ProductPageLocators.MESSAGE in a_message.text, "Ошибка"
         print("Товар добавлен успешно")
 
