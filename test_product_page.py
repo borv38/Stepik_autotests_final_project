@@ -6,7 +6,8 @@ def test_go_to_product_page(browser):
     page.open()
     page.add_to_cart()
     page.solve_quiz_and_get_code()
-    page.compare_message()
+    page.product_added()
+    page.price_is_ok()
 
 
 
