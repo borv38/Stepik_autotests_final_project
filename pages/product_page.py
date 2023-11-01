@@ -7,8 +7,10 @@ class ProductPage(BasePage):
         link.click()
 
     def product_added(self):
-        assert ProductPageLocators.MESSAGE in ProductPageLocators.ADD_MESSAGE.text, "Ошибка"
+        add_message = self.browser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[1]/div")
+        assert ProductPageLocators.MESSAGE in add_message.text, "Ошибка"
 
     def price_is_ok(self):
-        assert ProductPageLocators.CURRENT_PRICE in ProductPageLocators.CART_PRICE.text, "Price not looks good"
+        cart_price = self.browser.find_element_by_css_selector("#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs")
+        assert ProductPageLocators.CURRENT_PRICE in cart_price.text, "Price not looks good"
 
