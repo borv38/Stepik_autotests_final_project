@@ -7,7 +7,7 @@ class ProductPage(BasePage):
         link.click()
 
     def product_added(self):
-        add_message = self.browser.find_element_by_xpath("/html/body/div[2]/div/div[1]/div[1]/div")
+        add_message = self.browser.find_element_by_xpath('//*[@id="messages"]/div[1]/div/text()')
         assert ProductPageLocators.MESSAGE in add_message.text, "Ошибка"
 
     def price_is_ok(self):
