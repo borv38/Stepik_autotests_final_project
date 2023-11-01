@@ -9,8 +9,9 @@ class ProductPage(BasePage):
     def product_added(self):
         a_message = self.browser.find_element(*ProductPageLocators.ADD_MESSAGE)
         assert ProductPageLocators.MESSAGE in a_message.text, "Ошибка"
+        print("Товар добавлен успешно")
 
     def price_is_ok(self):
         c_price = self.browser.find_element(*ProductPageLocators.CART_PRICE)
         assert ProductPageLocators.CURRENT_PRICE in c_price.text, "Price not looks good"
-
+        print("Стоимость товара в корзине соответствует стоимости товара")
