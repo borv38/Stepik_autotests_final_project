@@ -10,8 +10,6 @@ def test_go_to_product_page(browser):
     page.add_to_cart()
     page.solve_quiz_and_get_code()
     time.sleep(10)
-    print(ProductPageLocators.ADD_MESSAGE.text)
-    time.sleep(3)
     page.product_added()
     page.price_is_ok()
 
