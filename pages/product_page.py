@@ -16,5 +16,6 @@ class ProductPage(BasePage):
     def price_is_ok(self):
         c_price = self.browser.find_element(*ProductPageLocators.CART_PRICE)
         subj_price = self.browser.find_element(*ProductPageLocators.PRICE)
+        print(subj_price)
         assert subj_price.text == c_price.text, "Price not looks good"
         print("Стоимость товара в корзине соответствует стоимости товара")
