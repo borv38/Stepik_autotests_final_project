@@ -7,7 +7,7 @@ class ProductPage(BasePage):
         link.click()
 
     def product_added(self):
-        assert ProductPageLocators.MESSAGE in ProductPageLocators.ADD_MESSAGE, "Ошибка"
+        assert ProductPageLocators.MESSAGE in ProductPageLocators.ADD_MESSAGE.text, "Ошибка"
 
     def price_is_ok(self):
         assert ProductPageLocators.CURRENT_PRICE in ProductPageLocators.CART_PRICE.text, "Price not looks good"
