@@ -22,8 +22,6 @@ class ProductPage(BasePage):
         print(c_price.text)
         assert subj_price.text[1:] in c_price.text, "Price not looks good"
         print("Стоимость товара в корзине соответствует стоимости товара")
-
-
-def should_not_be_success_message(self):
-    assert self.is_not_element_present(*ProductPageLocators.ADD_MESSAGE), \
-        "Success message is presented, but should not be"
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADD_MESSAGE), \
+            "Success message is presented, but should not be"
