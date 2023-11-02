@@ -8,8 +8,6 @@ class ProductPage(BasePage):
         link.click()
 
     def product_added(self):
-        # a_message = self.browser.find_element(*ProductPageLocators.ADD_MESSAGE)
-        # print(a_message.text)
         a_book_name = self.browser.find_element(*ProductPageLocators.ACTUAL_BOOK_NAME)
         full_book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME)
         assert a_book_name.text == full_book_name.text, "Ошибка"

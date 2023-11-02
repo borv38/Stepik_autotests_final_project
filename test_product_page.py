@@ -23,15 +23,8 @@ def test_go_to_product_page(browser, link):
     page.price_is_ok()
 
 
-# def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
-#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-#     page = ProductPage(browser, link)
-#     page.open()
-#     time.sleep(2)
-#     page.add_to_cart()
-#     page.should_not_be_success_message()
-#
 @pytest.mark.need_review
+@pytest.mark.xfail
 def test_guest_can_add_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
@@ -42,21 +35,34 @@ def test_guest_can_add_product_to_basket(browser):
     page.product_added()
 
 
-# def test_guest_cant_see_success_message(self, browser):
-#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-#     page = ProductPage(browser, link)
-#     page.open()
-#     time.sleep(2)
-#     page.should_not_be_success_message()
-#
-#
-# def test_message_disappeared_after_adding_product_to_basket(browser):
-#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-#     page = ProductPage(browser, link)
-#     page.open()
-#     time.sleep(2)
-#     page.add_to_cart()
-#     page.should_be_disappeared()
+@pytest.mark.messages
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    page = ProductPage(browser, link)
+    page.open()
+    time.sleep(2)
+    page.add_to_cart()
+    page.should_not_be_success_message()
+
+
+@pytest.mark.messages
+@pytest.mark.xfail
+def test_guest_cant_see_success_message(browser):
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    page = ProductPage(browser, link)
+    page.open()
+    time.sleep(2)
+    page.should_not_be_success_message()
+
+
+@pytest.mark.messages
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    page = ProductPage(browser, link)
+    page.open()
+    time.sleep(2)
+    page.add_to_cart()
+    page.should_be_disappeared()
 
 
 # def test_guest_should_see_login_link_on_product_page(browser):
@@ -65,7 +71,7 @@ def test_guest_can_add_product_to_basket(browser):
 #     page.open()
 #     page.should_be_login_link()
 #
-@pytest.mark.need_review #данный тест упадет и будет отмечен как FAILED потомучто в обучении указан не существующий селектор
+@pytest.mark.need_review  # данный тест упадет и будет отмечен как FAILED потомучто в обучении указан не существующий селектор
 def test_guest_can_go_to_login_page_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
