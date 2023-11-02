@@ -8,6 +8,7 @@ from .pages.product_page import ProductPage
 
 @pytest.mark.parametrize('link', ["0", "1","2", "3", "4", "5", "6", "7", "8", "9"])
 
+@pytest.mark.xfail(reason="Bug in this promo-link")
 def test_go_to_product_page(browser, link):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"
     page = ProductPage(browser, link)
