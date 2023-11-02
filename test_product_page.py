@@ -31,15 +31,15 @@ from .pages.login_page import LoginPage
 #     page.add_to_cart()
 #     page.should_not_be_success_message()
 #
-#
-# def test_guest_can_add_product_to_basket(self, browser):
-#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-#     page = ProductPage(browser, link)
-#     page.open()
-#     time.sleep(2)
-#     page.add_to_cart()
-#     time.sleep(5)
-#     page.product_added()
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(self, browser):
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    page = ProductPage(browser, link)
+    page.open()
+    time.sleep(2)
+    page.add_to_cart()
+    time.sleep(5)
+    page.product_added()
 
 
 # def test_guest_cant_see_success_message(self, browser):
@@ -72,15 +72,15 @@ from .pages.login_page import LoginPage
 #     page.open()
 #     page.go_to_login_page()
 
-
-# def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-#     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
-#     page = ProductPage(browser, link)
-#     page.open()
-#     page.go_to_the_cart()
-#     basket_page = BasketPage(browser, browser.current_url)
-#     basket_page.checkout_button_exists()
-#     basket_page.empty_cart()
+@pytest.mark.need_review
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_the_cart()
+    basket_page = BasketPage(browser, browser.current_url)
+    basket_page.checkout_button_exists()
+    basket_page.empty_cart()
 
 
 @pytest.mark.register
@@ -100,6 +100,7 @@ class TestUserAddToBasketFromProductPage():
         time.sleep(2)
         page.should_not_be_success_message()
 
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
         page = ProductPage(browser, link)
