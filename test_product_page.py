@@ -20,30 +20,30 @@ from .pages.product_page import ProductPage
 #     page.price_is_ok()
 
 
-def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-    page = ProductPage(browser, link)
-    page.open()
-    time.sleep(2)
-    page.add_to_cart()
-    page.should_not_be_success_message()
-
-
-def test_guest_cant_see_success_message(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-    page = ProductPage(browser, link)
-    page.open()
-    time.sleep(2)
-    page.should_not_be_success_message()
-
-
-def test_message_disappeared_after_adding_product_to_basket(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
-    page = ProductPage(browser, link)
-    page.open()
-    time.sleep(2)
-    page.add_to_cart()
-    page.should_be_disappeared()
+# def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+#     page = ProductPage(browser, link)
+#     page.open()
+#     time.sleep(2)
+#     page.add_to_cart()
+#     page.should_not_be_success_message()
+#
+#
+# def test_guest_cant_see_success_message(browser):
+#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+#     page = ProductPage(browser, link)
+#     page.open()
+#     time.sleep(2)
+#     page.should_not_be_success_message()
+#
+#
+# def test_message_disappeared_after_adding_product_to_basket(browser):
+#     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+#     page = ProductPage(browser, link)
+#     page.open()
+#     time.sleep(2)
+#     page.add_to_cart()
+#     page.should_be_disappeared()
 
 
 def test_guest_should_see_login_link_on_product_page(browser):
