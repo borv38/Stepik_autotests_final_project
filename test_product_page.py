@@ -92,13 +92,14 @@ class TestUserAddToBasketFromProductPage():
         page = LoginPage(browser, link)
         page.open()
         page.register_new_user(str(time.time()) + "@fakemail.org", "alladinEr6")
+        time.sleep(10)
         page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self, browser):
         link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
         page = ProductPage(browser, link)
         page.open()
-        time.sleep(10)
+        time.sleep(5)
         page.should_not_be_success_message()
 
     @pytest.mark.need_review
