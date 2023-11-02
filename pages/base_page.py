@@ -4,6 +4,8 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException  # в начале файла
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from .basket_page import BasketPage
 from .locators import BasePageLocators
 
 class BasePage():
@@ -34,6 +36,7 @@ class BasePage():
     def go_to_the_cart(self):
         link = self.browser.find_element(*BasePageLocators.CART)
         link.click()
+     #   return BasketPage(browser=self.browser, url=self.browser.current_url)
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
