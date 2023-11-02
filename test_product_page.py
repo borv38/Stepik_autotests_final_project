@@ -17,7 +17,6 @@ from .pages.product_page import ProductPage
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
 
-@pytest.mark.xfail(reason="fixing")
 def test_go_to_product_page(browser, link):
     link = {link}
     page = ProductPage(browser, link)
