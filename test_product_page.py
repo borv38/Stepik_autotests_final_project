@@ -41,4 +41,5 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.open()
     time.sleep(2)
     page.add_to_cart()
-    page.is_disappeared()
+    page.should_be_disappeared()
+
