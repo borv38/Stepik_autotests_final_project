@@ -17,7 +17,7 @@ class BasePage():
     #  self.browser.implicitly_wait(timeout)
 
     def go_to_login_page(self):  # перенесли методы из main_page, в main_page воткнули заглушку
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID) #данного селектора нет на странице с товарами, поэтому данный тест будет падать
         link.click()
 
     def should_be_login_link(self):
