@@ -68,6 +68,7 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.open()
     page.should_be_login_link()
 
+
 @pytest.mark.need_review  # данный тест упадет и будет отмечен как FAILED потомучто в обучении указан не существующий селектор
 def test_guest_can_go_to_login_page_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"

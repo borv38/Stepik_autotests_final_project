@@ -16,14 +16,6 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page.empty_cart()
 
 
-# from selenium.webdriver.common.by import By
-
-# def test_guest_can_go_to_login_page(browser):
-#    link = "http://selenium1py.pythonanywhere.com/"
-#    page = MainPage(browser, link)
-#    page.open()
-#    page.go_to_login_page()
-
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
     def test_guest_can_go_to_login_page(self, browser):
