@@ -30,3 +30,4 @@ class ProductPage(BasePage):
     def should_be_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.ADD_MESSAGE), \
             "Nothing to wait"
+

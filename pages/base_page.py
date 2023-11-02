@@ -15,7 +15,7 @@ class BasePage():
 
     #  self.browser.implicitly_wait(timeout)
 
-    def go_to_login_page(self):                                                     #перенесли методы из main_page, в main_page воткнули заглушку
+    def go_to_login_page(self):  # перенесли методы из main_page, в main_page воткнули заглушку
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
         link.click()
 
@@ -31,6 +31,10 @@ class BasePage():
         except NoSuchElementException:
             return False
         return True
+
+    def go_to_the_cart(self):
+        link = self.browser.find_element(*BasePageLocators.CART)
+        link.click()
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
@@ -60,3 +64,13 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+    # Методы для проверки корзины - добавил сюда
+    def checkout_button_exists(self):
+        assert self.is_not_element_present(*BasePageLocators.CHECKOUT_BUTTON), \
+            "The cart is not empty"
+
+    def empty_cart(self):
+        assert self.is_element_present(*BasePageLocators.EMPTY_CART_PROOF), \
+            "There is no message that cart is an empty"
+
