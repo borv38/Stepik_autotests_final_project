@@ -7,7 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 from pages.basket_page import BasketPage
 
-class BasePage():
+
+class BasePage:
     # def __init__(self, browser, url, timeout=10):
     def __init__(self, browser, url):
         self.browser = browser
@@ -64,6 +65,3 @@ class BasePage():
         except TimeoutException:
             return False
         return True
-
-
-
