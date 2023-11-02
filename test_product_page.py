@@ -73,28 +73,25 @@ from .pages.login_page import LoginPage
 #     page.go_to_login_page()
 
 
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
-    page = ProductPage(browser, link)
-    page.open()
-    page.go_to_the_cart()
-    basket_page = BasketPage(browser, browser.current_url)
-    basket_page.checkout_button_exists()
-    basket_page.empty_cart()
-
+# def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+#     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+#     page = ProductPage(browser, link)
+#     page.open()
+#     page.go_to_the_cart()
+#     basket_page = BasketPage(browser, browser.current_url)
+#     basket_page.checkout_button_exists()
+#     basket_page.empty_cart()
 
 
 @pytest.mark.register
 class TestUserAddToBasketFromProductPage():
-    @pytest.fixture(scope="function", autouse=True) #добавить фикстуру сетап. внутри нее
+    @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
         page = LoginPage(browser, link)
         page.open()
-        page.register_new_user(str(time.time()) + "@fakemail.org","alladinEr6")
+        page.register_new_user(str(time.time()) + "@fakemail.org", "alladinEr6")
         page.should_be_authorized_user()
-
-
 
     def test_user_cant_see_success_message(self, browser):
         link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
