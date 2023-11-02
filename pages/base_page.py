@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from .basket_page import BasketPage
 from .locators import BasePageLocators
 
+
 class BasePage():
     # def __init__(self, browser, url, timeout=10):
     def __init__(self, browser, url):
