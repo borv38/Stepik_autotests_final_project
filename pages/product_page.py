@@ -11,7 +11,7 @@ class ProductPage(BasePage):
         #print(a_message.text)
         a_book_name = self.browser.find_element(*ProductPageLocators.ACTUAL_BOOK_NAME)
         full_book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME)
-        assert a_book_name == full_book_name, "Ошибка"
+        assert a_book_name.text == full_book_name.text, "Ошибка"
         print("Товар добавлен успешно")
 
     def price_is_ok(self):
