@@ -30,7 +30,7 @@ class LoginPage(BasePage):
         pass2field = self.browser.find_element(*BasePageLocators.PASS2_FIELD)
         pass2field.send_keys(password)
         time.sleep(2)
-        link = self.browser.find_elementt(*BasePageLocators.REGISTER)
+        link = self.browser.find_element(*BasePageLocators.REGISTER)
         link.click()
 
 
