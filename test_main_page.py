@@ -26,9 +26,6 @@ class TestLoginFromMainPage():
 
     #  login_page = LoginPage(browser, browser.current_url) закомиченные строки, которые использовались для реализации перехода на login page и исполнения методов из LoginPage класса
     # login_page.should_be_login_page()
-
-    #  login_page = page.go_to_login_page()
-    # login_page.should_be_login_page()
     def test_guest_should_see_login_link(self, browser):
         link = "http://selenium1py.pythonanywhere.com/"
         page = BasePage(browser, link)
