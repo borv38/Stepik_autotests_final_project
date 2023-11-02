@@ -23,10 +23,13 @@ class LoginPage(BasePage):
     def register_new_user(self, email, password):
         email_field = self.browser.find_element(*BasePageLocators.EM_FIELD)
         email_field.send_keys(email)
+        time.sleep(5)
         pass1field = self.browser.find_element(*BasePageLocators.PASS_FIELD)
         pass1field.send_keys(password)
+        time.sleep(5)
         pass2field = self.browser.find_element(*BasePageLocators.PASS2_FIELD)
         pass2field.send_keys(password)
+        time.sleep(2)
         link = self.browser.find_elementt(*BasePageLocators.REGISTER)
         link.click()
 
