@@ -1,8 +1,5 @@
-from .pages.main_page import MainPage
-
-
 # from .pages.basket_page import BasketPage
-# #from .pages.main_page import MainPage
+from .pages.main_page import MainPage
 # from .pages.login_page import LoginPage
 # from selenium.webdriver.common.by import By
 
