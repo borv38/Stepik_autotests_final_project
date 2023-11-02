@@ -32,7 +32,7 @@ from .pages.login_page import LoginPage
 #     page.should_not_be_success_message()
 #
 @pytest.mark.need_review
-def test_guest_can_add_product_to_basket(self, browser):
+def test_guest_can_add_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
     page.open()
