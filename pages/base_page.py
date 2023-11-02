@@ -5,7 +5,6 @@ from selenium.common.exceptions import NoAlertPresentException  # в начал�
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from .basket_page import BasketPage
 from .locators import BasePageLocators
 
 
