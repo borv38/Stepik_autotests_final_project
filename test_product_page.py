@@ -98,7 +98,7 @@ class TestUserAddToBasketFromProductPage():
         link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
         page = ProductPage(browser, link)
         page.open()
-        time.sleep(2)
+        time.sleep(10)
         page.should_not_be_success_message()
 
     @pytest.mark.need_review
