@@ -17,7 +17,8 @@ class BasePage():
     #  self.browser.implicitly_wait(timeout)
 
     def go_to_login_page(self):  # перенесли методы из main_page, в main_page воткнули заглушку
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID) #данного селектора нет на странице с товарами, поэтому данный тест будет падать
+        link = self.browser.find_element(
+            *BasePageLocators.LOGIN_LINK_INVALID)  # данного селектора нет на странице с товарами, поэтому данный тест будет падать
         link.click()
 
     def should_be_login_link(self):
@@ -32,6 +33,10 @@ class BasePage():
         except NoSuchElementException:
             return False
         return True
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
     def go_to_the_cart(self):
         link = self.browser.find_element(*BasePageLocators.CART)
