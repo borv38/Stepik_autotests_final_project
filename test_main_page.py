@@ -5,12 +5,11 @@ from .pages.main_page import MainPage
 
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
-    page = BasePage(browser, link)
+    page = MainPage(browser, link)
     page.open()
     cart_page = page.go_to_the_cart()
     cart_page.checkout_button_exists()
     cart_page.empty_cart()
-
 
 # from .pages.login_page import LoginPage
 from selenium.webdriver.common.by import By
