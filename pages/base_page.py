@@ -15,7 +15,7 @@ class BasePage():
 
     #  self.browser.implicitly_wait(timeout)
 
-    def go_to_login_page(self):                                                     #перенесли методы из
+    def go_to_login_page(self):                                                     #перенесли методы из main_page, в main_page воткнули заглушку
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
         link.click()
 
